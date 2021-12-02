@@ -2,6 +2,10 @@
 // === External dependencies ===
 // =============================
 
+// ~~~~~~~~~~~~~~~~~~
+//require('dotenv').config()
+// ~~~~~~~~~~~~~~~~~~
+
 // Official Slack packages: Bolt for Javascript & OAuth helpers
 const { App } = require('@slack/bolt')
 
@@ -10,6 +14,7 @@ const { AuthedTeam } = require('./helpers/db')
 
 // We'll use the randomstring package to generate, well, random strings for our state store
 const { generate: randomStringGenerator } = require('randomstring')
+
 
 // =====================================
 // === Internal dependencies/helpers ===
@@ -23,6 +28,8 @@ const { scheduleReminders, manuallyTriggerScheduledJobs } = require('./helpers/s
 // ====================================
 // === Initialization/Configuration ===
 // ====================================
+
+console.log('process.env.SLACK_SIGNING_SECRET', process.env.SLACK_SIGNING_SECRET)
 
 // Initialize the Bolt app, including OAuth installer helpers
 // (refer to https://github.com/slackapi/bolt)

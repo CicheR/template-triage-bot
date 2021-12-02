@@ -133,6 +133,7 @@ const scheduleReminders = function () {
     // For each reminder, schedule it based off of the expression value
     // and send the rest of the config to the function (onCronTick) so it knows what to do
     scheduledReminders.forEach(reminderConfig => {
+      console.log('reminderConfig.expression', reminderConfig.expression)
       cron.schedule(reminderConfig.expression, () => {
         onCronTick(reminderConfig)
       })
