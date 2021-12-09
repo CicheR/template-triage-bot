@@ -259,5 +259,5 @@ app.error(error => {
 
   // Actually start thhe Bolt app. Let's go!
   await app.start(process.env.PORT || 3000)
-  console.log('⚡️ Bolt app is running!')
+  console.log('⚡️ Bolt app is running! (@slack/bolt v3.8.1)')
 })()
